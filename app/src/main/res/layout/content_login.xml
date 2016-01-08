@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.mcsgoc.www.portal.LoginActivity"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="MCSGOC PORTAL"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textStyle="bold"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:text="Login"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textStyle="bold"
+            android:layout_below="@+id/textView"
+            android:layout_toRightOf="@+id/forgot"
+            android:layout_toEndOf="@+id/forgot"
+            android:gravity="center" />
+
+
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView2"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="34dp"
+            android:background="@android:drawable/editbox_background"
+            android:ems="10"
+            android:hint="Roll No/ Username"
+            android:inputType="textEmailAddress"
+            android:padding="12dp" />
+
+        <EditText
+            android:id="@+id/college"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/name"
+            android:layout_centerHorizontal="true"
+            android:background="@android:drawable/editbox_background"
+            android:ems="10"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:padding="12dp" />
+
+        <TextView
+            android:id="@+id/forgot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/college"
+            android:layout_centerHorizontal="true"
+            android:padding="8dp"
+            android:text="Forgot password?"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <Button
+            android:id="@+id/login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/login_button"
+            android:textColor="#fff"
+            android:text="Login"
+
+            android:layout_marginTop="150dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="2">
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Faculty Register"
+                android:id="@+id/fac"
+                android:background="@drawable/signup"
+                android:layout_gravity="right"
+                android:layout_weight="1" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Student Register"
+                android:id="@+id/stud"
+                android:background="@drawable/signup"
+
+                android:layout_weight="1" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</android.support.v4.widget.NestedScrollView>

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.mcsgoc.www.portal.AdmissionActivity"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="MCSGOC PORTAL"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="12dp"
+            android:text="Student Admission Form"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/admiName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:background="@android:drawable/editbox_background"
+            android:ems="10"
+            android:hint="Name"
+            android:padding="12dp" />
+
+        <EditText
+            android:id="@+id/admiEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:background="@android:drawable/editbox_background"
+            android:ems="10"
+            android:hint="Email"
+            android:padding="12dp"
+            android:inputType="textEmailAddress" />
+
+        <EditText
+            android:id="@+id/admiAdd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+
+            android:background="@android:drawable/editbox_background"
+            android:ems="10"
+            android:hint="Address"
+            android:inputType="textEmailAddress|number"
+            android:padding="12dp" />
+
+        <EditText
+            android:id="@+id/admiCourse"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:background="@android:drawable/editbox_background"
+            android:ems="10"
+            android:hint="Course"
+            android:inputType="textPassword"
+            android:padding="12dp" />
+
+        <EditText
+            android:id="@+id/college"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:background="@android:drawable/editbox_background"
+            android:ems="10"
+            android:hint="College"
+            android:padding="12dp" />
+
+
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <EditText
+                android:id="@+id/regBranch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:drawable/editbox_background"
+                android:ems="10"
+                android:hint="Branch"
+                android:padding="12dp" />
+
+            <EditText
+                android:id="@+id/admiPer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:drawable/editbox_background"
+                android:ems="10"
+                android:hint="12th per"
+                android:maxLength="1"
+                android:inputType="number"
+                android:padding="12dp" />
+        </LinearLayout>
+        <EditText
+            android:id="@+id/regMob"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:drawable/editbox_background"
+            android:ems="10"
+            android:hint="Mobile Number"
+            android:padding="12dp"
+            android:inputType="phone" />
+
+
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Submit"
+            android:id="@+id/submit"
+            android:background="@drawable/signup"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="10dp" />
+
+
+    </LinearLayout>
+
+</android.support.v4.widget.NestedScrollView>

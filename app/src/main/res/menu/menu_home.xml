@@ -1,0 +1,31 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".HomeActivity">
+    <item
+        android:id="@+id/action_login"
+        android:orderInCategory="100"
+        android:title="LoginPage"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_dir"
+        android:orderInCategory="100"
+        android:title="Dir Page"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_map"
+        android:orderInCategory="100"
+        android:title="map Page"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_about"
+        android:orderInCategory="100"
+        android:title="about"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_news"
+        android:orderInCategory="100"
+        android:title="news"
+        app:showAsAction="never" />
+
+</menu>

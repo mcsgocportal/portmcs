@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.mcsgoc.www.portal.ProfileActivity"
+    >
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="16dp"
+            android:orientation="vertical">
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:id="@+id/textInputImage"
+                android:layout_height="wrap_content"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:id="@+id/textInputName"
+                android:layout_height="wrap_content"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp">
+                <EditText
+                    android:id="@+id/editName"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textColor="#23800a"
+                    android:hint="Name"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:background="#0000"
+                    android:padding="8dp"
+                    android:enabled="false" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:id="@+id/textInputEnrollNo"
+                android:layout_height="wrap_content"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp">
+                <EditText
+                    android:id="@+id/editEnrollNo"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="User Name"
+                    android:textColor="#23800a"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:background="#0000"
+                    android:padding="8dp"
+                    android:enabled="false"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:id="@+id/textInputEmail"
+                android:layout_height="wrap_content"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp">
+                <EditText
+                    android:id="@+id/editEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="Email"
+                    android:textColor="#23800a"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:background="#0000"
+                    android:padding="8dp"
+                    android:enabled="false"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:id="@+id/textInputPassword"
+                android:layout_height="wrap_content"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp">
+                <EditText
+                    android:id="@+id/editPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="Roll No."
+                    android:textColor="#23800a"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:background="#0000"
+                    android:padding="8dp"
+                    android:enabled="false"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:id="@+id/textInputPhoneNo"
+                android:layout_height="wrap_content"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp">
+                <EditText
+                    android:id="@+id/editPhoneNo"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="Phone Number"
+                    android:textColor="#23800a"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:background="#0000"
+                    android:padding="8dp"
+                    android:enabled="false"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:id="@+id/textInputBranch"
+                android:layout_height="wrap_content"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp">
+                <EditText
+                    android:id="@+id/editBranch"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="Branch"
+                    android:textColor="#23800a"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:background="#0000"
+                    android:padding="8dp"
+                    android:enabled="false"/>
+            </android.support.design.widget.TextInputLayout>
+
+
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</android.support.v4.widget.NestedScrollView>
