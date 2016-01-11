@@ -62,7 +62,7 @@ public class NewsRecyclerAdapter extends RecyclerView.Adapter<NewsRecyclerAdapte
 
     @NonNull
     private String getFormattedDate(int position) {
-        DateFormat dateFormat = new SimpleDateFormat("dd-mm-yyyy", Locale.ENGLISH);
+        DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy", Locale.ENGLISH);
         Date date = items.get(position).getDate();
         return dateFormat.format(date);
     }
