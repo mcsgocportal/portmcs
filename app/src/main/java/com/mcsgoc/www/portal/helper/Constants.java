@@ -28,6 +28,7 @@ public interface Constants {
     String DIR_COL_USER_FACULTY_ID="faculty_id";
     String DIR_COL_USER_FACULTY="faculty";
     String DIR_COL_USER_STUDENT="student";
+    String DIR_COLC_USER_PIC="profilePic";
 
     //schema for admission
     String DIR_COL_ADMI_ADD="address";
