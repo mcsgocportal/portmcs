@@ -62,11 +62,12 @@ public interface Constants {
     //schema for news
     String DIR_COL_NEWS_REF_NO="Ref_no";
     String DIR_COL_NEWS_ATTACHMENT="attachment";
-    String DIR_COL_NEWS_NOTICE="news";
+    String DIR_COL_NEWS="news";
     String DIR_COL_NEWS_SUB="subject";
     String DIR_COL_NEWS_COLLEGE="college";
     String DIR_COL_NEWS_DEP="department";
     String DATE="date";
+    String DIR_COL_NEWS_NOTICE="notice";
 
     //schema for suggestion
     String DIR_COL_SUGGESTION_DATE="date";

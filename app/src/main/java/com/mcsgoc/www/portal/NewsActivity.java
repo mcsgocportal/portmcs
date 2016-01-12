@@ -2,9 +2,6 @@ package com.mcsgoc.www.portal;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
-import android.support.design.widget.CollapsingToolbarLayout;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -12,7 +9,6 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.widget.Toast;
 
 import com.mcsgoc.www.portal.fragments.NewsFragment;
@@ -46,7 +42,7 @@ public class NewsActivity extends AppCompatActivity {
         noticeItems = new ArrayList<>();
         final ProgressDialog dialog = ProgressDialog.show(this, "loading...", "notice is loading.", true, true);
 
-        ParseQuery<ParseObject> notificationQuery = new ParseQuery<>(Constants.DIR_COL_NEWS_NOTICE);
+        ParseQuery<ParseObject> notificationQuery = new ParseQuery<>(Constants.DIR_COL_NEWS);
         notificationQuery.findInBackground(new FindCallback<ParseObject>() {
             @Override
             public void done(List<ParseObject> list, ParseException e) {

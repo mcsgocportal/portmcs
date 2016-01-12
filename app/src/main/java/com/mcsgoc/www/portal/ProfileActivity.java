@@ -43,10 +43,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
     ImageView profileImage;
     private ParseUser currentUser;
 
-    /**
-     * ATTENTION: This was auto-generated to implement the App Indexing API.
-     * See https://g.co/AppIndexing/AndroidStudio for more information.
-     */
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

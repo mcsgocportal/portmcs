@@ -69,6 +69,13 @@ public class ICloudActivity extends AppCompatActivity {
             return true;
         }
 
+        if (id==R.id.action_send_notice)
+        {
+            Intent i=new Intent(this,EnterNewsActivity.class);
+            startActivity(i);
+            return true;
+        }
+
         return super.onOptionsItemSelected(item);
     }
 }

@@ -23,4 +23,10 @@
         android:orderInCategory="100"
         android:title="fees"
         app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_send_notice"
+        android:orderInCategory="100"
+        android:title="send notice"
+        app:showAsAction="never" />
 </menu>
