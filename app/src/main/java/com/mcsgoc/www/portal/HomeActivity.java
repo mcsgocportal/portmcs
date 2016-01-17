@@ -5,13 +5,29 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity implements View.OnClickListener {
+    Button login,dir,map,about,news,admi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        login= (Button) findViewById(R.id.loginbtn);
+        login.setOnClickListener(this);
+        dir= (Button) findViewById(R.id.dirbtn);
+        dir.setOnClickListener(this);
+        map= (Button) findViewById(R.id.mapbtn);
+        map.setOnClickListener(this);
+        about= (Button) findViewById(R.id.aboutbtn);
+        about.setOnClickListener(this);
+        news= (Button) findViewById(R.id.newsbtn);
+        news.setOnClickListener(this);
+        admi= (Button) findViewById(R.id.admibtn);
+        admi.setOnClickListener(this);
     }
 
     @Override
@@ -65,5 +81,40 @@ public class HomeActivity extends AppCompatActivity {
 
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onClick(View view) {
+        int id=view.getId();
+
+        switch (id)
+        {
+            case R.id.loginbtn:
+                Intent i=new Intent(this,LoginActivity.class);
+                startActivity(i);
+                break;
+            case R.id.dirbtn:
+                Intent j=new Intent(this,DirectoryActivity.class);
+                startActivity(j);
+                break;
+            case R.id.mapbtn:
+                Intent k=new Intent(this,MapActivity.class);
+                startActivity(k);
+                break;
+            case R.id.aboutbtn:
+                Intent l=new Intent(this,AboutActivity.class);
+                startActivity(l);
+                break;
+            case R.id.newsbtn:
+                Intent m=new Intent(this,NewsActivity.class);
+                startActivity(m);
+                break;
+            case R.id.admibtn:
+                Intent n=new Intent(this,AdmissionActivity.class);
+                startActivity(n);
+
+
+        }
+
     }
 }
