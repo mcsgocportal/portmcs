@@ -28,6 +28,6 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
         map.getUiSettings().setCompassEnabled(true);
         LatLng mcsgoc = new LatLng(26.908381, 80.862700);
         map.addMarker(new MarkerOptions().position(mcsgoc).title("MCSGOC"));
-        map.animateCamera(CameraUpdateFactory.newLatLngZoom(mcsgoc, 16));
+        map.animateCamera(CameraUpdateFactory.newLatLngZoom(mcsgoc, 12));
     }
 }

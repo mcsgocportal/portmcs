@@ -2,8 +2,6 @@ package com.mcsgoc.www.portal;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
@@ -15,6 +13,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.mcsgoc.www.portal.fragments.PersonFragment;
+import com.mcsgoc.www.portal.helper.ConnectionDetector;
 import com.mcsgoc.www.portal.helper.Constants;
 import com.mcsgoc.www.portal.helper.Person;
 import com.mcsgoc.www.portal.helper.RecyclerItemClickListener;
@@ -40,6 +39,13 @@ public class DirectoryActivity extends AppCompatActivity implements SearchView.O
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_directory);
 
+        if (!new ConnectionDetector(getApplicationContext()).isConnectingToInternet()) {
+            Toast.makeText(DirectoryActivity.this, "No Internet Available", Toast.LENGTH_SHORT).show();
+           // Intent i=new Intent(this,HomeActivity.class);
+           // startActivity(i);
+            finish();
+        }
+
 
         SearchView searchView = (SearchView) findViewById(R.id.search);
         searchView.setOnQueryTextListener(this);
@@ -53,6 +59,7 @@ public class DirectoryActivity extends AppCompatActivity implements SearchView.O
         }));
         items = new ArrayList<>();
         final ProgressDialog dialog = ProgressDialog.show(this, "wait", "loading data", true);
+        dialog.setCancelable(true);
         ParseQuery<ParseObject> getDir = new ParseQuery<>(Constants.TABLE_DIRECTORY);
 
         getDir.orderByAscending(Constants.DIR_COL_COLEGE);

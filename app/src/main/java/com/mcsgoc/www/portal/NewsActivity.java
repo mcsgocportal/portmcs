@@ -12,33 +12,55 @@ import android.support.v7.widget.Toolbar;
 import android.widget.Toast;
 
 import com.mcsgoc.www.portal.fragments.NewsFragment;
+import com.mcsgoc.www.portal.helper.ConnectionDetector;
 import com.mcsgoc.www.portal.helper.Constants;
 import com.mcsgoc.www.portal.helper.NewsItem;
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
+import com.parse.ParseUser;
 
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
-public class NewsActivity extends AppCompatActivity {
+public class NewsActivity extends AppCompatActivity implements NewsFragment.RefreshNotice {
     ArrayList<NewsItem> noticeItems;
+    private ArrayList<NewsItem> pastNoticeItems;
+    private ArrayList<NewsItem> presentNoticeItems;
+    private ArrayList<NewsItem> futureNoticeItems;
+    private ViewPager pager;
+    private TabLayout tabLayout;
+    private ParseUser currentUser;
+    private String userType;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news);
+        if (!new ConnectionDetector(getApplicationContext()).isConnectingToInternet()) {
+            Toast.makeText(NewsActivity.this, "No Internet Available", Toast.LENGTH_SHORT).show();
+            //Intent i=new Intent(this,HomeActivity.class);
+           // startActivity(i);
+            finish();
+        }
+        currentUser = ParseUser.getCurrentUser();
+        userType = currentUser.getString("type");
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        final ViewPager pager = (ViewPager) findViewById(R.id.pager);
-        final TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
+        pager = (ViewPager) findViewById(R.id.pager);
+        tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setTabMode(TabLayout.MODE_FIXED);
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
+        loadNoticeList();
+
+    }
+
+    private void loadNoticeList() {
         noticeItems = new ArrayList<>();
         final ProgressDialog dialog = ProgressDialog.show(this, "loading...", "notice is loading.", true, true);
 
@@ -49,37 +71,42 @@ public class NewsActivity extends AppCompatActivity {
                 if (e == null) {
                     if (list.size() > 0) {
                         for (ParseObject item : list) {
-                            String objID = item.getObjectId();
-                            String noticeTitle = item.getString(Constants.DIR_COL_NEWS_SUB);
-                            String college = item.getString(Constants.DIR_COL_NEWS_COLLEGE);
-                            String department = item.getString(Constants.DIR_COL_NEWS_DEP);
-                            Date date = item.getDate(Constants.DATE);
-
-                            noticeItems.add(new NewsItem(objID, noticeTitle, department, date));
+                            String noticeType = item.getString(Constants.DIR_COL_USER_TYPE);
+                            if (noticeType != null && (noticeType.equals(userType) || noticeType.equals("all"))) {
+                                String noticeContent = item.getString(Constants.DIR_COL_NEWS_NOTICE);
+                                String objID = item.getObjectId();
+                                String noticeTitle = item.getString(Constants.DIR_COL_NEWS_SUB);
+                                String college = item.getString(Constants.DIR_COL_NEWS_COLLEGE);
+                                String department = item.getString(Constants.DIR_COL_NEWS_DEP);
+                                Date date = item.getDate(Constants.DATE);
+                                noticeItems.add(new NewsItem(objID, noticeTitle, department, date));
+                            }
 
                         }
                     } else {
-                        Toast.makeText(NewsActivity.this, "" + list.size(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(NewsActivity.this, "no notice available" + list.size(), Toast.LENGTH_SHORT).show();
+                    }
+                    if (noticeItems.size() > 0) {
+                        pager.setAdapter(new MyAdapter(getSupportFragmentManager()));
+                        tabLayout.setupWithViewPager(pager);
+                        dialog.dismiss();
                     }
                 } else {
+                    dialog.dismiss();
+                    e.printStackTrace();
                     Toast.makeText(NewsActivity.this, "" + e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
 
-                pager.setAdapter(new MyAdapter(getSupportFragmentManager()));
-                tabLayout.setupWithViewPager(pager);
-                dialog.dismiss();
             }
         });
+    }
 
-
-
-
+    @Override
+    public void refreshNoticeList() {
+        loadNoticeList();
     }
 
     private class MyAdapter extends FragmentPagerAdapter {
-        private ArrayList<NewsItem> pastNoticeItems;
-        private ArrayList<NewsItem> presentNoticeItems;
-        private ArrayList<NewsItem> futureNoticeItems;
 
         public MyAdapter(FragmentManager fm) {
             super(fm);
@@ -107,7 +134,6 @@ public class NewsActivity extends AppCompatActivity {
             }
 
         }
-
 
 
         @Override
@@ -143,14 +169,6 @@ public class NewsActivity extends AppCompatActivity {
             return super.getPageTitle(position);
         }
 
-        /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-        */
+
     }
 }

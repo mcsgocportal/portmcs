@@ -23,25 +23,34 @@
             <Button
                 android:id="@+id/loginbtn"
                 android:layout_width="0dp"
-                android:layout_height="100dp"
+                android:layout_height="90dp"
                 android:layout_weight="1"
-                android:background="@drawable/login" />
+                android:background="@drawable/nlogin"
+                android:text="         i Cloud"
+                android:gravity="bottom"
+                android:textColor="#fff"/>
 
             <Button
                 android:id="@+id/dirbtn"
                 android:layout_width="0dp"
-                android:layout_height="100dp"
+                android:layout_height="90dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
-                android:background="@drawable/directory" />
+                android:background="@drawable/ndirectory"
+                android:text="      Directory"
+                android:gravity="bottom"
+                android:textColor="#fff"/>
 
             <Button
                 android:id="@+id/mapbtn"
                 android:layout_width="0dp"
-                android:layout_height="100dp"
+                android:layout_height="90dp"
                 android:layout_weight="1"
-                android:background="@drawable/maps" />
+                android:background="@drawable/nmaps"
+                android:text="           Map"
+                android:gravity="bottom"
+                android:textColor="#fff"/>
         </LinearLayout>
 
         <LinearLayout
@@ -53,25 +62,35 @@
             <Button
                 android:id="@+id/aboutbtn"
                 android:layout_width="0dp"
-                android:layout_height="100dp"
+                android:layout_height="90dp"
                 android:layout_weight="1"
-                android:background="@drawable/about" />
+                android:background="@drawable/nabout"
+                android:text="          About"
+                android:gravity="bottom"
+                android:textColor="#fff"
+                />
 
             <Button
                 android:id="@+id/newsbtn"
                 android:layout_width="0dp"
-                android:layout_height="100dp"
+                android:layout_height="90dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
-                android:background="@drawable/news" />
+                android:background="@drawable/nnews"
+                android:text="          News"
+                android:gravity="bottom"
+                android:textColor="#fff"/>
 
             <Button
                 android:id="@+id/admibtn"
                 android:layout_width="0dp"
-                android:layout_height="100dp"
+                android:layout_height="90dp"
                 android:layout_weight="1"
-                android:background="@drawable/maps" />
+                android:background="@drawable/nadmission"
+                android:text="      Admission"
+                android:gravity="bottom"
+                android:textColor="#fff"/>
 
         </LinearLayout>
     </LinearLayout>

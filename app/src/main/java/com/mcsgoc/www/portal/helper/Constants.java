@@ -29,6 +29,7 @@ public interface Constants {
     String DIR_COL_USER_FACULTY="faculty";
     String DIR_COL_USER_STUDENT="student";
     String DIR_COLC_USER_PIC="profilePic";
+    String DIR_COL_USER_TYPE="type";
 
     //schema for admission
     String DIR_COL_ADMI_ADD="address";
@@ -92,4 +93,8 @@ public interface Constants {
     String COURSE = "course";
     String FIRST_INSTALLMENT = "firstInstallment";
     String SECOND_INSTALLMENT = "secondInstallment";
+
+    //registarion schema
+    String[] USER_TYPE= {"notype","student","teacher","faculty"};
+    String EXTRA_NOTICE_ID = "com.mcsgoc.www.portal.fragments.noticeID";
 }

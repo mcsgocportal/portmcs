@@ -16,6 +16,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.mcsgoc.www.portal.fragments.DayFragment;
+import com.mcsgoc.www.portal.helper.ConnectionDetector;
 import com.mcsgoc.www.portal.helper.Constants;
 import com.mcsgoc.www.portal.helper.TimeTableItem;
 import com.parse.FindCallback;
@@ -36,10 +37,19 @@ public class TimeTableActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_time_table);
+
+        if (!new ConnectionDetector(getApplicationContext()).isConnectingToInternet()) {
+            Toast.makeText(TimeTableActivity.this, "No Internet Available", Toast.LENGTH_SHORT).show();
+            // Intent i=new Intent(this,HomeActivity.class);
+            //startActivity(i);
+            finish();
+        }
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         final ProgressDialog dialog = ProgressDialog.show(this, "loading...", "timetable is loading.", false);
+        dialog.setCancelable(true);
         timeTableItems = new ArrayList<>();
         // fetching data from parse
         ParseQuery<ParseObject> timeTableQuery = new ParseQuery<ParseObject>(Constants.TIMETABLE);
